@@ -8,11 +8,11 @@
 	"use strict";
 
 	/*global define*/
-	if (typeof define === 'function' && define.amd) {
-		define(['moment'], factory);                 // AMD
-	}  
 	if (typeof module === 'object' && module.exports) {
 		module.exports = factory(require('./'));     // Node
+	}
+	else if (typeof define === 'function' && define.amd) {
+		define(['moment'], factory);                 // AMD
 	} else {
 		factory(root.moment);                        // Browser
 	}
